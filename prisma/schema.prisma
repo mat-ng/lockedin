@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Lock {
+  id           Int     @id @default(autoincrement())
+  is_locked    Boolean @default(false)
+  is_triggered Boolean @default(false)
+}
