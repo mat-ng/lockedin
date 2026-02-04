@@ -8,9 +8,8 @@ RUN npm install
 COPY . .
 
 RUN npx prisma generate
-RUN npx prisma db push --url $DATABASE_URL
 RUN npm run build
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+CMD sh -c "npx prisma db push && npm start"
