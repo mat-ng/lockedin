@@ -12,4 +12,4 @@ services:
       - ./dev.db:/app/dev.db
     ports:
       - "3000:3000"
-    command: ["sh", "-c", "npx prisma generate && npx prisma migrate deploy && npm start"]
+    command: ["sh", "-c", "npx prisma generate && npx prisma db push && npm start"]
